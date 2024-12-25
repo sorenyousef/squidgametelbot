@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body style="background: rgba(20, 4, 8, 1); overflow: hidden;">
+
+<div class="pointshow">NO : 23433221</div>
+
+<div style="display: flex; flex-direction: row; position: fixed; top: 13%; width: 300px; font-size: 25px; left: 19%;">
+<img src="./umbrella.svg" alt="">
+<p style="background: linear-gradient(270deg, #63182F 15.68%, #BC0229 91.12%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+">68000 squid</p>
+</div>
+
+
+<img src="./SquidGametext.png" alt="" class="logo2">
+
+<button class="buttontag" id="grow-shrink-button">
+    <img src="./Stafftoy2.svg" alt="" class="button2" id="image">
+</button>
+
+
+
+
+<a href="">
+
+<img src="./Volume up.svg" alt="" class="rss"></a>
+
+
+<a href="./lottery.html">
+<img src="./Ticket.svg" alt="" class="rss2"></a>
+
+
+
+
+    
+<footer class="footer">
+
+
+<a href="./main2.html" style="-webkit-tap-highlight-color: transparent;">
+<img src="./umbrella.svg" alt=""></a>
+
+
+<a href="./earn.html" style="user-select: none; outline: none;  -webkit-tap-highlight-color: transparent;">
+<img src="./circle.svg" alt="" ></a>
+
+<a href="./friends.html" style="user-select: none; outline: none;  -webkit-tap-highlight-color: transparent;">
+<img src="./triangle.svg" alt="" ></a>
+
+
+<a href="./tge.html" style="user-select: none; outline: none;  -webkit-tap-highlight-color: transparent;">
+<img src="./Rectangle.svg" alt="" ></a>
+
+
+
+</footer>
+
+
+<div class="pointer"><img src="./navbaricon.svg" alt="" style="position: fixed; bottom: 0%; left: 13.7%;"></div>
+
+<script>
+
+
+
+const image = document.getElementById("image");
+    const button = document.getElementById("grow-shrink-button");
+
+    let size = 1; // Initial scale
+    const maxSize = 1.5; // Maximum scale size (this can be set to your desired max size)
+    const growthRate = 0.2; // Rate at which the image grows per tap
+    const shrinkSpeed = 30; // Shrink interval speed in milliseconds
+    let shrinkingInterval;
+
+
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    let totalPoints = 0; // Total points scored
+// !!!!!!
+
+
+
+    let accumulatedGrowth = 0.2; // To track the accumulated growth from consecutive taps
+    let lastTapTime = 2; // To track the time of the last tap
+
+    // Handle multi-touch or single-pointer taps using `pointerdown`
+    button.addEventListener("pointerdown", (event) => {
+      clearInterval(shrinkingInterval); // Stop any ongoing shrinking process
+
+      const currentTime = Date.now();
+      const timeDifference = currentTime - lastTapTime;
+
+      // If the user taps quickly in sequence, allow stacking growth
+      if (timeDifference < 300) { // If taps are less than 300ms apart (fast tapping)
+        accumulatedGrowth += growthRate * 2; // Increase growth rate for fast taps
+      } else {
+        accumulatedGrowth += growthRate; // Normal growth for regular taps
+      }
+
+      // Update last tap time to current time
+      lastTapTime = currentTime;
+
+      // Apply accumulated growth to the size
+      size = 1 + accumulatedGrowth;
+      if (size > maxSize) size = maxSize; // Cap the size at the max size
+
+      image.style.transform = `scale(${size})`;
+
+      // Calculate points for this tap based on size
+      const points = Math.floor(size * 10); // Example points logic
+      totalPoints += points;
+
+      // Show points at the exact location of the pointer (multi-touch support)
+      const buttonRect = button.getBoundingClientRect();
+      const x = event.clientX - buttonRect.left; // X position relative to button
+      const y = event.clientY - buttonRect.top; // Y position relative to button
+      showPoints(x, y, `+${points}`);
+    });
+
+    // Handle button release or loss of pointer (e.g., lifting finger)
+    button.addEventListener("pointerup", () => {
+      // Shrink the image after release, but allow growth if tapped again
+      shrinkingInterval = setInterval(() => {
+        if (size > 1) {
+          size -= 0.1; // Shrink gradually
+          accumulatedGrowth -= 0.1; // Reduce accumulated growth as it shrinks
+          image.style.transform = `scale(${Math.max(size, 1)})`; // Ensure size doesn't go below 1
+        } else {
+          clearInterval(shrinkingInterval); // Stop shrinking at original size
+        }
+      }, shrinkSpeed);
+    });
+
+    // Function to display points at the tap location
+    function showPoints(x, y, text) {
+      const pointsElement = document.createElement("div");
+      pointsElement.className = "points";
+
+
+
+
+// emtiazi ke ba har tap neshon mide
+      pointsElement.textContent = "+25";
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+
+
+      // Add the points element to the button
+      button.appendChild(pointsElement);
+
+      // Position the points element relative to the button
+      pointsElement.style.left = `${x}px`;
+      pointsElement.style.top = `${y}px`;
+
+      // Remove the points element after the animation
+      setTimeout(() => {
+        pointsElement.remove();
+      }, 700); // Match fade animation duration
+    }
+
+
+    
+</script>
+</body>
+</html>

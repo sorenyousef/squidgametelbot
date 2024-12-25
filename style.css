@@ -1,0 +1,286 @@
+@font-face {
+    font-family: 'Game Of Squids';
+    src: url('./fonts/GameOfSquids.eot');
+    src: url('./fonts/GameOfSquids.eot?#iefix') format('embedded-opentype'),
+        url('./fonts/GameOfSquids.woff2') format('woff2'),
+        url('./fonts/GameOfSquids.woff') format('woff'),
+        url('./fonts/GameOfSquids.svg#GameOfSquids') format('svg'),
+        url('./fonts/GameOfSquids.ttf') format('ttf');
+    src: url('./fonts/GameOfSquids.otf') format('otf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+body {
+    font-family: 'Game of Squids';
+     font-weight: normal;
+      font-style: normal;
+      /* width: 120%; */
+}
+
+.logo {
+    z-index: 5;
+    display: block;
+    background-image: url(./SquidGametext.png);
+    position: fixed;
+    top: 5%;
+    right: 20%;
+
+}
+
+.textbox {
+    display: flex;
+    flex-direction: column;
+
+    /* opacity: 0.5; */
+    position: fixed;
+    bottom: 6%;
+    padding: 2px;
+    width: 95%;
+   
+    height: 35vw;
+    text-align: center;
+
+background: rgba(0, 0, 0, 0.39);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(0, 0, 0, 0.3);
+ 
+}
+.pointshow {
+    position: fixed;
+    color: white;
+    font-size: 25px;
+    top: 5%;
+    left: 3%;
+    padding: 5px;
+    height: 12vw;
+    text-align: center;
+    width: 90%;
+    border: solid rgba(233, 62, 125, 0.77) 2px;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.total {
+    position: fixed;
+    color: white;
+    font-size: 25px;
+    top: 26%;
+    left: 3%;
+    padding: 5px;
+    height: 12vw;
+    text-align: left;
+    width: 90%;
+    border: solid rgba(233, 62, 125, 0.77) 2px;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+
+.button {
+    position: fixed;
+    text-align: center;
+    position: center;
+    border-radius: 16px;
+    width: 70%;
+    bottom: 9%;
+    left: 15%;
+    height: 10vw;
+    color: white;
+    align-items: center;
+    line-height: 10vw;
+    font-size: 25px;
+    background-image: linear-gradient(180deg, #BC0229 -10.71%, #63182F 84.58%);
+    overflow: hidden;
+}
+.button2 {
+    
+    background: transparent;
+    transition: transform 0.2s ease;
+    outline: none;
+}
+.rss {
+    position: fixed;
+    bottom: 15%;
+    left: 17.7%;
+}
+
+.rss2 {
+    position: fixed;
+    bottom: 15%;
+    right: 14.3%;
+}
+
+.buttontag {
+    position: fixed;
+    width: 115px;
+    height: 330px;
+    background: none;
+    border: none;
+    position: fixed;
+    bottom: 20%;
+    left: 35%;
+    outline: none;
+}
+
+.logo2 {
+    transform: scale(1.2) rotate(-90deg);
+    opacity: 0.5;
+    /* transform: rotate(-90deg); */
+    position: fixed;
+    top: 25%;
+    right: -10%;
+    overflow: hidden;
+}
+
+.points {
+    position: absolute;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    animation: fadeUp 1s forwards;
+    pointer-events: none;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+  }
+
+
+
+.footer {
+    z-index: 20;
+    outline: none;
+    display: flex;
+    flex-direction: row;
+    gap: 12vw;
+    align-items: center;
+    padding-top: 5px;
+    /* padding-right: 5px; */
+    position: fixed;
+    bottom: 3%;
+    left: 4.5%;
+    border: solid rgba(233, 62, 125, 0.77) 2px;
+    border-radius: 15px;
+    width: 90vw;
+    justify-content: center;
+    height: 65px;
+    user-select: none;
+}
+.right-do {
+    border-radius: 50%;
+    border: solid white 2px;
+    width: fit-content;
+    color: white;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    justify-content: center;
+    background:none;
+    font-size: 18px;
+    padding-left: 4px;
+
+}
+
+.left-info {
+    color: white;
+}
+
+.container2 {
+    display: flex;
+    position: fixed;
+    top: 35%;
+    height: 93vw;
+    gap: 12px;
+    left: 3%;
+    flex-direction: column;
+    width: 98%;
+    overflow-y:scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    overflow-x: hidden;
+}
+.container3 {
+    display: flex;
+    position: fixed;
+    top: 37%;
+    height: 75vw;
+    gap: 12px;
+    left: 3%;
+    flex-direction: column;
+    width: 98%;
+    overflow-y:scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    overflow-x: hidden;
+}
+
+.mission {
+    gap: 25vw;
+    align-items: center;
+    justify-content: center;
+    border: solid rgba(233, 62, 125, 0.77) 2px;
+    display: flex;
+    flex: row;
+    width: 95%;
+    font-size: 12px;
+    border-radius: 21px;
+    height: 42px;
+}
+
+.fren {
+    border:solid rgba(233, 62, 125, 0.77) 2px;
+    display: flex;
+    border-radius: 16px;
+    height: 45px;
+    line-height: 18px;
+    justify-content: center;
+    text-align: center;
+    flex-direction: row;
+    color: white;
+    gap: 32vw;
+    width: 95%;
+    white-space: nowrap;
+}
+.copy-button {
+    background: rgba(232, 10, 82, 1);
+    width: 95%;
+    left: 2.5%;
+    position: fixed;
+    bottom: 15%;
+    font-family: 'Game of Squids';
+    height: 50px;
+    color: white;
+    font-size: 16px;
+    border-radius: 20px;
+    border: 3px solid rgba(233, 62, 125, 0.77)
+}
+
+.container4 {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    top: 20%;
+    gap: 20px;
+
+}
+
+.timer {
+    border:solid rgba(233, 62, 125, 0.77) 2px;
+    background-color: rgba(182, 2, 73, 1);
+    width: 65px;
+    height: 65px;
+    
+}
