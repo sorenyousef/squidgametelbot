@@ -17,6 +17,7 @@ body {
     font-family: 'Game of Squids';
      font-weight: normal;
       font-style: normal;
+      user-select: none;
       /* width: 120%; */
 }
 
@@ -83,6 +84,8 @@ border: 1px solid rgba(0, 0, 0, 0.3);
 
 
 .button {
+    font-family: 'Game of Squids';
+    border: none;
     position: fixed;
     text-align: center;
     position: center;
@@ -104,17 +107,7 @@ border: 1px solid rgba(0, 0, 0, 0.3);
     transition: transform 0.2s ease;
     outline: none;
 }
-.rss {
-    position: fixed;
-    bottom: 15%;
-    left: 17.7%;
-}
 
-.rss2 {
-    position: fixed;
-    bottom: 15%;
-    right: 14.3%;
-}
 
 .buttontag {
     position: fixed;
@@ -364,3 +357,44 @@ border: 1px solid rgba(0, 0, 0, 0.3);
 body.popup-active {
     overflow: hidden;
 }
+
+
+.button-earn {
+    font-family: 'Game of Squids';
+    border: solid rgba(233, 62, 125, 0.77) 2px;
+    background: none;
+    color: white;
+    border-radius: 15px;
+    width: 130px;
+}
+
+.coin {
+    position: fixed; top: 30%;left: 45%; transform: scale(7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px; /* Add perspective to create a 3D effect */
+    margin: 50px auto;
+}
+
+.coin img {
+    width: 100%; /* Coin image fills the container */
+    height: auto;
+    transform-style: preserve-3d; /* Ensures 3D transformations apply */
+    animation: spin 2s infinite linear; /* Rotates infinitely */
+  }
+
+
+  @keyframes spin {
+    0% {
+      transform: rotateY(0deg);
+    }
+    50% {
+      transform: rotateY(180deg);
+      /* Coin flips edge-on here, looks thinner */
+    }
+    100% {
+      transform: rotateY(360deg);
+    }
+  }
+  
