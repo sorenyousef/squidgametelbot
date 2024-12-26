@@ -1,12 +1,12 @@
 @font-face {
     font-family: 'Game Of Squids';
-    src: url('./fonts/GameOfSquids.eot');
-    src: url('./fonts/GameOfSquids.eot?#iefix') format('embedded-opentype'),
-        url('./fonts/GameOfSquids.woff2') format('woff2'),
-        url('./fonts/GameOfSquids.woff') format('woff'),
-        url('./fonts/GameOfSquids.svg#GameOfSquids') format('svg'),
-        url('./fonts/GameOfSquids.ttf') format('ttf');
-    src: url('./fonts/GameOfSquids.otf') format('otf');
+    src: url('./static/fonts/GameOfSquids.eot');
+    src: url('./static/fonts/GameOfSquids.eot') format('embedded-opentype'),
+        url('./static/fonts/GameOfSquids.woff2') format('woff2'),
+        url('./static/fonts/GameOfSquids.woff') format('woff'),
+        url('./static/fonts/GameOfSquids.svg') format('svg'),
+        url('./static/fonts/GameOfSquids.ttf') format('ttf');
+    src: url('./static/fonts/GameOfSquids.otf') format('otf');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -24,7 +24,7 @@ body {
 .logo {
     z-index: 5;
     display: block;
-    background-image: url(./SquidGametext.png);
+    background-image: url(./static/icons/SquidGametext.png);
     position: fixed;
     top: 5%;
     right: 20%;
