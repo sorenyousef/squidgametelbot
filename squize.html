@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+<body style="background: rgba(20, 4, 8, 1); overflow: hidden;">
+    
+    <!-- <img src="./bis1.png" alt="" style="position: fixed; top: 5%; transform: scale(0.4); left: -40%;">
+    <img src="./bis2.png" alt="" style="transform: scale(0.4);">
+    <img src="./bis4.png" alt="" style="transform: scale(0.4);"> -->
+
+    <div class="pointshow">SQUID SEASON</div>
+    <div class="coin">
+
+    <img src="./umbrella.svg" alt="" ></div>
+    <p style="color: white; top: 35%; position: fixed; font-size: 25px;">SQUID QUIZ</p>
+
+    <div class="question-box">
+        <p style="color: white; padding-left: 10px;">ANSWER THE QUESTION:</p>
+        <p style="color: white;  margin-top: 15%; white-space: nowrap; font-size: 28px; text-align: center;">QUESTION</p>
+
+        <div class="wrapper-box">
+
+ 
+                <input type="text" id="name" name="name" placeholder="WRITE THE ANSWER" />
+                <button  id="open-popup" class="button">CHECK</button>
+
+        </div>
+
+    </div>
+
+
+    <div id="popup-overlay"></div>
+
+    <!-- پاپ‌آپ -->
+    <div id="popup-container-win">
+    
+        <div style="border: 1px solid rgba(232, 67, 129, 1); z-index: 10;
+        border-radius: 16px 10px 0 0; height: 100%; background: rgba(20, 4, 8, 1);
+        ">
+    
+            
+                <button id="close-popup_win" style="background: none; border: none; color: white; font-size: 25px; padding: 14px; margin-left: 87%;">X</button>
+            
+            
+            <p style="color: white; text-align: center; font-size: 30px; font-weight: 500;">CONGRATULATIONS
+                <br><span style="color: white; text-align: center; font-size: 17px;">to be continued</span>
+            </p>
+            <img src="./umverllaalone.svg" alt="" style="position: fixed; top: 50%; left: 12%;">
+            <p style="color: white; text-align: center; font-size: 30px; font-weight: 500; position: fixed; bottom: 10%; left: 28%;">800 SQUID</p>
+
+
+            <button class="copy-button" style="bottom: 5%; width: 90%; left: 5%;">CLAIM</button>
+           
+        </div>
+    
+    </div>
+
+
+    <div id="popup-container-lose">
+    
+        <div style="border: 1px solid rgba(232, 67, 129, 1); z-index: 10;
+        border-radius: 16px 10px 0 0; height: 100%; background: rgba(20, 4, 8, 1);
+        ">
+    
+            
+                <button id="close-popup_lose" style="background: none; border: none; color: white; font-size: 29px; padding: 14px; margin-left: 87%;">X</button>
+            
+            
+            <p style="color: white; text-align: center; font-size: 30px; font-weight: 500;">you are dead</p>
+
+            <img src="./umbrella.svg" class="coin"  id="coin" alt="" style="top: 55%;">
+
+            
+ 
+            <img src="./bis1.png" id="image1" alt="" style="position: fixed; height: 120px; width:100px;left: 34%;top: 60%; z-index: 30;  opacity: 0;   transition: opacity 1s ease, transform 1s ease;
+  transform: translate(-50%, -50%) scale(0);">
+            <img src="./bis2.png" id="image2" alt="" style="position: fixed; height: 120px; width:100px;left: 65%;top: 60%; z-index: 30;  opacity: 0;   transition: opacity 1s ease, transform 1s ease;
+  transform: translate(-50%, -50%) scale(0);">
+            <img src="./bis4.png" id="image3" alt=""  style="position: fixed; height: 120px; width:140px;left: 48%;top: 74%; z-index: 30;;  opacity: 0;   transition: opacity 1s ease;
+  transform: translate(-50%, -50%) scale(0) rotate(-10deg);">
+                
+         
+
+                <button class="copy-button" style="bottom: 5%; width: 90%; left: 5%;">YOU CAN TRY NEXT DAY</button>
+        
+           
+        </div>
+    
+    </div>
+<script>
+    window.onload = function() {
+        // Define the correct answer
+
+        // javab question inja biad
+        // limit 24h ro bayad server side hal beshe va age ba js piadebeshe mishe doresh zad va aslan fekr nakonam javab bede
+        const correctAnswer = '42'; // Example correct answer (change as needed)
+    
+        // Get elements
+        const openPopupButton = document.getElementById('open-popup');
+        const popupOverlay = document.getElementById('popup-overlay');
+        const popupContainerWin = document.getElementById('popup-container-win');
+        const popupContainerLose = document.getElementById('popup-container-lose');
+        const userInput = document.getElementById('name');
+    
+        // This section handles the coin and image animations for the 'lose' container
+        setTimeout(function() {
+            // Add the class to the coin to make it fade and scale
+            document.getElementById('coin').classList.add('fade-scale');
+    
+            // After the coin disappears, show the hidden images
+            setTimeout(function() {
+                document.getElementById('image1').style.opacity = '1';
+                document.getElementById('image1').style.transform = 'translate(-50%, -50%) scale(1)';
+    
+                document.getElementById('image2').style.opacity = '1';
+                document.getElementById('image2').style.transform = 'translate(-50%, -50%) scale(1)';
+    
+                document.getElementById('image3').style.opacity = '1';
+                document.getElementById('image3').style.transform = 'translate(-50%, -50%) scale(1)';
+            }, 1000); // Timing for the hidden images to appear after coin animation completes
+        }, 1700); // Wait 1 second before triggering the effect
+    
+        // Show the appropriate pop-up container based on user input
+        openPopupButton.addEventListener('click', function(e) {
+            e.preventDefault();
+    
+            const answer = userInput.value.trim(); // Get the user's input
+    
+            // Hide the popup overlay initially
+            popupOverlay.style.display = 'block';
+    
+            // Check if the user's answer is correct
+            if (answer === correctAnswer) {
+                // Show the correct answer popup and hide the incorrect one
+                popupContainerWin.style.display = 'block';
+                popupContainerLose.style.display = 'none';
+            } else {
+                // Show the incorrect answer popup and hide the correct one
+                popupContainerWin.style.display = 'none';
+                popupContainerLose.style.display = 'block';
+            }
+        });
+    
+        // Close the pop-up when clicking the overlay or close button
+        popupOverlay.addEventListener('click', function() {
+            document.body.classList.remove('popup-active');
+            popupOverlay.style.display = 'none';
+            popupContainerWin.style.display = 'none';
+            popupContainerLose.style.display = 'none';
+        });
+    
+        // Close the "win" popup when clicking the close button
+        document.getElementById('close-popup_win').addEventListener('click', function() {
+            document.body.classList.remove('popup-active');
+            popupOverlay.style.display = 'none';
+            popupContainerWin.style.display = 'none';
+        });
+    
+        // Close the "lose" popup when clicking the close button
+        document.getElementById('close-popup_lose').addEventListener('click', function() {
+            document.body.classList.remove('popup-active');
+            popupOverlay.style.display = 'none';
+            popupContainerLose.style.display = 'none';
+        });
+    };
+</script>
+</body>
+</html>

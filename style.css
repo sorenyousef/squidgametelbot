@@ -334,6 +334,30 @@ border: 1px solid rgba(0, 0, 0, 0.3);
     box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.5);
 }
 
+#popup-container-win {    
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    bottom: 2%;
+    width: 95%;
+    height: 70%; /* نیمه پایینی صفحه */
+    /* background: transparent; */
+    border-radius: 16px 16px 0 0;
+    z-index: 25;
+    box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.5);}
+
+    #popup-container-lose{    
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        bottom: 2%;
+        width: 95%;
+        height: 70%; /* نیمه پایینی صفحه */
+        /* background: transparent; */
+        border-radius: 16px 16px 0 0;
+        z-index: 25;
+        box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.5);}
+
 #popup-container h3 {
     color: white;
     margin-top: 20px;
@@ -369,7 +393,7 @@ body.popup-active {
 }
 
 .coin {
-    position: fixed; top: 30%;left: 45%; transform: scale(7);
+    position: fixed; top: 18%;left: 45%; transform: scale(5);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -381,7 +405,7 @@ body.popup-active {
     width: 100%; /* Coin image fills the container */
     height: auto;
     transform-style: preserve-3d; /* Ensures 3D transformations apply */
-    animation: spin 2s infinite linear; /* Rotates infinitely */
+    animation: spin 8s infinite linear; /* Rotates infinitely */
   }
 
 
@@ -398,3 +422,62 @@ body.popup-active {
     }
   }
   
+
+  .question-box {
+    border: solid rgba(233, 62, 125, 0.77) 2px;
+    border-radius: 16px;
+    height: 100vw;
+    width: 95%;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    bottom: 2%;
+  }
+
+
+  input[type="text"] {
+    background-color: rgba(20, 4, 8, 1);
+    width: 85%; /* Full-width input */
+    padding: 10px; /* Inner padding */
+    font-family: 'Game of Squids';
+
+    margin: 10px 0; /* Margin above and below */
+    border: 2px solid #ccc; /* Light gray border */
+    border-radius: 15px; /* Rounded corners */
+    font-size: 16px; /* Text size */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+    border: solid rgba(233, 62, 125, 0.77) 2px;
+  }
+
+  /* Change styles when input is focused */
+  input[type="text"]:focus {
+    color: white;
+    font-family: 'Game of Squids';
+    border: solid rgba(233, 62, 125, 0.77) 2px;
+    /* border-color: #007bff; Blue border */
+    outline: none; /* Removes default outline */
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2); /* Blue glow */
+  }
+
+  /* Styling placeholder text */
+  input[type="text"]::placeholder {
+    color: #aaa; /* Light gray */
+    font-style: italic; /* Italic text */
+  }
+
+  .wrapper-box {
+
+    height: 40vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .coin.fade-scale {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+
+
