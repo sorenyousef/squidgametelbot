@@ -1,0 +1,62 @@
+<!-- templates/includes/custom_alert.html -->
+<div class="custom-alert" id="customAlert">
+    <span id="customAlertMessage"></span>
+    <button onclick="closeAlert()">OK</button>
+</div>
+
+<style>
+    .custom-alert {
+        font-family: 'Game of Squids';
+        background-color:  rgba(33, 45, 59, 1);
+        border: solid rgba(102, 204, 255, 1) 1px ;
+         border-radius: 10px;
+         background: rgba(20, 4, 8, 1);
+        color: #fff;
+        /* font-family: 'Vazir', sans-serif; */
+        font-size: 16px;
+        padding: 20px;
+        /* border-radius: 10px; */
+        /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); */
+        width: 300px;
+        text-align: center;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1000;
+        display: none;
+    }
+    
+    .custom-alert button {
+        font-family: 'Game of Squids';
+        background-color:  rgba(33, 45, 59, 1);
+        border: solid rgba(233, 62, 125, 0.77) 2px;
+        border-radius: 10px;
+        margin-top: 15px;
+        padding: 10px 20px;
+        /* background-color: #555; */
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+    .custom-alert button:hover {
+        background-color: #777;
+    }
+</style>
+
+<script>
+    function showAlert(message) {
+        const alertBox = document.getElementById('customAlert');
+        const alertMessage = document.getElementById('customAlertMessage');
+        alertMessage.textContent = message;
+        alertBox.style.display = 'block';
+    }
+
+    function closeAlert() {
+        const alertBox = document.getElementById('customAlert');
+        alertBox.style.display = 'none';
+    }
+</script>
