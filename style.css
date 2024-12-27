@@ -55,13 +55,15 @@ border: 1px solid rgba(0, 0, 0, 0.3);
 .pointshow {
     position: fixed;
     color: white;
-    font-size: 25px;
+    font-size: 24px;
+    line-height: 4.5vh;
     top: 5%;
     left: 3%;
     padding: 5px;
-    height: 12vw;
+    height: 4.5vh;
     text-align: center;
-    width: 90%;
+    width: 85vw;
+    left: 5.5%;
     border: solid rgba(233, 62, 125, 0.77) 2px;
     border-radius: 16px;
     overflow: hidden;
@@ -123,7 +125,7 @@ border: 1px solid rgba(0, 0, 0, 0.3);
 
 .logo2 {
     transform: scale(1.2) rotate(-90deg);
-    opacity: 0.5;
+    opacity: 0.25;
     /* transform: rotate(-90deg); */
     position: fixed;
     top: 25%;
@@ -186,7 +188,23 @@ border: 1px solid rgba(0, 0, 0, 0.3);
     padding-left: 4px;
 
 }
+.right-do-img {
 
+    border-radius: 50%;
+    border: solid white 2px;
+    width: fit-content;
+    color: white;
+    background: none;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    justify-content: center;
+    background:none;
+    font-size: 18px;
+    padding-left: 4px;
+    padding-top: 4px;
+
+}
 .left-info {
     color: white;
 }
@@ -231,6 +249,20 @@ border: 1px solid rgba(0, 0, 0, 0.3);
     font-size: 12px;
     border-radius: 21px;
     height: 42px;
+}
+
+.mission2 {
+    gap: 25vw;
+    align-items: center;
+    justify-content: center;
+    border: solid rgba(233, 62, 125, 0.77) 2px;
+    display: flex;
+    flex: row;
+    width: 95%;
+    font-size: 12px;
+    border-radius: 21px;
+    height: 42px;
+
 }
 
 .fren {
@@ -383,7 +415,17 @@ body.popup-active {
 }
 
 
-.button-earn {
+
+.inactive {
+    font-family: 'Game of Squids';
+    border: solid rgba(128, 35, 69, 0.99) 2px;
+    opacity: 0.75;
+    background: none;
+    color: white;
+    border-radius: 15px;
+    width: 130px;
+}
+.active {
     font-family: 'Game of Squids';
     border: solid rgba(233, 62, 125, 0.77) 2px;
     background: none;
