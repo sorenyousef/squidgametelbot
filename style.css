@@ -11,7 +11,9 @@
     font-style: normal;
     font-display: swap;
 }
-
+.img {
+    pointer-events: none; user-select: none;
+}
 
 body {
     font-family: 'Game of Squids';
@@ -302,7 +304,7 @@ border: 1px solid rgba(0, 0, 0, 0.3);
     flex-direction: row;
     color: white;
     gap: 14vw;
-    width: 80%;
+    width: 95%;
     white-space: nowrap;
 }
 .copy-button {
