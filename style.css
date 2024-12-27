@@ -72,6 +72,10 @@ border: 1px solid rgba(0, 0, 0, 0.3);
 
 .total {
     position: fixed;
+    display: flex;
+    flex-direction: row;
+    gap: 30vw;
+    padding-right: 10px;
     color: white;
     font-size: 20px;
     top: 22%;
