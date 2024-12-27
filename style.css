@@ -185,6 +185,7 @@ border: 1px solid rgba(0, 0, 0, 0.3);
     user-select: none;
 }
 .right-do {
+    font-family: 'Game of Squids';
     border-radius: 50%;
     border: solid white 2px;
     width: fit-content;
@@ -195,7 +196,7 @@ border: 1px solid rgba(0, 0, 0, 0.3);
     justify-content: center;
     background:none;
     font-size: 18px;
-    padding-left: 4px;
+    padding-left: 2.2px;
 
 }
 .right-do-img {
