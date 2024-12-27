@@ -293,7 +293,7 @@ border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 .fren {
-    border:solid rgba(233, 62, 125, 0.77) 2px;
+    border:solid rgba(233, 62, 125, 0.77) 1px;
     display: flex;
     border-radius: 16px;
     height: 45px;
@@ -304,7 +304,7 @@ border: 1px solid rgba(0, 0, 0, 0.3);
     flex-direction: row;
     color: white;
     gap: 14vw;
-    width: 90%;
+    width: 90.8%;
     white-space: nowrap;
 }
 .copy-button {
