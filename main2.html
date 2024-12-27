@@ -71,104 +71,188 @@ transform: scale(1.3);">
 
 <div class="pointer"><img src="./static/icons/navbaricon.svg" alt="" style="position: fixed; bottom: 0%; left: 14.3%;"></div>
 
+
+
+
+
 <script>
 
+              // گرفتن عناصر مورد نیاز
+            //   const openPopupButton = document.getElementById('open-popup');
+            // const popupOverlay = document.getElementById('popup-overlay');
+            // const popupContainer = document.getElementById('popup-container');
+        
+            // // نمایش پاپ‌آپ
+            // openPopupButton.addEventListener('click', (e) => {
+            //     e.preventDefault();
+            //     document.body.classList.add('popup-active'); // اضافه کردن کلاس برای غیرفعال کردن اسکرول
+            //     popupOverlay.style.display = 'block';
+            //     popupContainer.style.display = 'block';
+            // });
+        
+            // // بستن پاپ‌آپ هنگام کلیک روی پس‌زمینه تاریک
+            // popupOverlay.addEventListener('click', () => {
+            //     document.body.classList.remove('popup-active'); // حذف کلاس برای فعال کردن اسکرول
+            //     popupOverlay.style.display = 'none';
+            //     popupContainer.style.display = 'none';
+            // });
+        
 
 
-// const image = document.getElementById("image");
-//     const button = document.getElementById("grow-shrink-button");
 
-//     let size = 1; // Initial scale
-//     const maxSize = 1.5; // Maximum scale size (this can be set to your desired max size)
-//     const growthRate = 0.2; // Rate at which the image grows per tap
-//     const shrinkSpeed = 30; // Shrink interval speed in milliseconds
-//     let shrinkingInterval;
+            function showPopup(content) {
+    // Create popup container
+    const popup = document.createElement("div");
+    popup.className = "popup-container";
+    
+    // Create overlay
+    const overlay = document.createElement("div");
+    overlay.className = "popup-overlay";
+    overlay.style.cssText = "position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 19;";
+    
+    // Set popup styles and content
+    popup.style.cssText = "position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 20; width: 300px;";
+    
+    popup.innerHTML = `
+        <div style="border: 1px solid rgba(232, 67, 129, 1); border-radius: 16px; background: rgba(20, 4, 8, 1); padding: 20px;">
+            <button id="close-popup" style="background: none; border: none; color: white; font-size: 25px; float: right; cursor: pointer;">X</button>
+            <p style="color: white; text-align: center; margin-top: 20px;">
+                You have reached your daily<br>
+                5000 squid<br>
+                come back to us after<br>
+                ${content}
+            </p>
+        </div>
+    `;
+    
+    // Add elements to DOM
+    document.body.appendChild(overlay);
+    document.body.appendChild(popup);
+    
+    // Close functions
+    const closePopup = () => {
+        document.body.removeChild(popup);
+        document.body.removeChild(overlay);
+    };
+    
+    // Event listeners
+    popup.querySelector('#close-popup').addEventListener('click', closePopup);
+    overlay.addEventListener('click', closePopup);
+}
 
-
-// // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-//     let totalPoints = 0; // Total points scored
-// // !!!!!!
-
-
-
-//     let accumulatedGrowth = 0.2; // To track the accumulated growth from consecutive taps
-//     let lastTapTime = 2; // To track the time of the last tap
-
-//     // Handle multi-touch or single-pointer taps using `pointerdown`
-//     button.addEventListener("pointerdown", (event) => {
-//       clearInterval(shrinkingInterval); // Stop any ongoing shrinking process
-
-//       const currentTime = Date.now();
-//       const timeDifference = currentTime - lastTapTime;
-
-//       // If the user taps quickly in sequence, allow stacking growth
-//       if (timeDifference < 300) { // If taps are less than 300ms apart (fast tapping)
-//         accumulatedGrowth += growthRate * 2; // Increase growth rate for fast taps
-//       } else {
-//         accumulatedGrowth += growthRate; // Normal growth for regular taps
-//       }
-
-//       // Update last tap time to current time
-//       lastTapTime = currentTime;
-
-//       // Apply accumulated growth to the size
-//       size = 1 + accumulatedGrowth;
-//       if (size > maxSize) size = maxSize; // Cap the size at the max size
-
-//       image.style.transform = `scale(${size})`;
-
-//       // Calculate points for this tap based on size
-//       const points = Math.floor(size * 10); // Example points logic
-//       totalPoints += points;
-
-//       // Show points at the exact location of the pointer (multi-touch support)
-//       const buttonRect = button.getBoundingClientRect();
-//       const x = event.clientX - buttonRect.left; // X position relative to button
-//       const y = event.clientY - buttonRect.top; // Y position relative to button
-//       showPoints(x, y, `+${points}`);
-//     });
-
-//     // Handle button release or loss of pointer (e.g., lifting finger)
-//     button.addEventListener("pointerup", () => {
-//       // Shrink the image after release, but allow growth if tapped again
-//       shrinkingInterval = setInterval(() => {
-//         if (size > 1) {
-//           size -= 0.1; // Shrink gradually
-//           accumulatedGrowth -= 0.1; // Reduce accumulated growth as it shrinks
-//           image.style.transform = `scale(${Math.max(size, 1)})`; // Ensure size doesn't go below 1
-//         } else {
-//           clearInterval(shrinkingInterval); // Stop shrinking at original size
-//         }
-//       }, shrinkSpeed);
-//     });
-
-//     // Function to display points at the tap location
-//     function showPoints(x, y, text) {
-//       const pointsElement = document.createElement("div");
-//       pointsElement.className = "points";
+showPopup("23:57")
 
 
 
 
-// // emtiazi ke ba har tap neshon mide
-//       pointsElement.textContent = "+25";
-// // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
 
 
-//       // Add the points element to the button
-//       button.appendChild(pointsElement);
 
-//       // Position the points element relative to the button
-//       pointsElement.style.left = `${x}px`;
-//       pointsElement.style.top = `${y}px`;
 
-//       // Remove the points element after the animation
-//       setTimeout(() => {
-//         pointsElement.remove();
-//       }, 700); // Match fade animation duration
-//     }
+
+
+
+const image = document.getElementById("image");
+    const button = document.getElementById("grow-shrink-button");
+
+    let size = 1; // Initial scale
+    const maxSize = 1.5; // Maximum scale size (this can be set to your desired max size)
+    const growthRate = 0.2; // Rate at which the image grows per tap
+    const shrinkSpeed = 30; // Shrink interval speed in milliseconds
+    let shrinkingInterval;
+
+
+
+
+
+
+
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    let totalPoints = 0; // Total points scored
+// !!!!!!
+
+
+
+    let accumulatedGrowth = 0.2; // To track the accumulated growth from consecutive taps
+    let lastTapTime = 2; // To track the time of the last tap
+
+    // Handle multi-touch or single-pointer taps using `pointerdown`
+    button.addEventListener("pointerdown", (event) => {
+      clearInterval(shrinkingInterval); // Stop any ongoing shrinking process
+
+      const currentTime = Date.now();
+      const timeDifference = currentTime - lastTapTime;
+
+      // If the user taps quickly in sequence, allow stacking growth
+      if (timeDifference < 300) { // If taps are less than 300ms apart (fast tapping)
+        accumulatedGrowth += growthRate * 2; // Increase growth rate for fast taps
+      } else {
+        accumulatedGrowth += growthRate; // Normal growth for regular taps
+      }
+
+      // Update last tap time to current time
+      lastTapTime = currentTime;
+
+      // Apply accumulated growth to the size
+      size = 1 + accumulatedGrowth;
+      if (size > maxSize) size = maxSize; // Cap the size at the max size
+
+      image.style.transform = `scale(${size})`;
+
+      // Calculate points for this tap based on size
+      const points = Math.floor(size * 10); // Example points logic
+      totalPoints += points;
+
+      // Show points at the exact location of the pointer (multi-touch support)
+      const buttonRect = button.getBoundingClientRect();
+      const x = event.clientX - buttonRect.left; // X position relative to button
+      const y = event.clientY - buttonRect.top; // Y position relative to button
+      showPoints(x, y, `+${points}`);
+    });
+
+    // Handle button release or loss of pointer (e.g., lifting finger)
+    button.addEventListener("pointerup", () => {
+      // Shrink the image after release, but allow growth if tapped again
+      shrinkingInterval = setInterval(() => {
+        if (size > 1) {
+          size -= 0.1; // Shrink gradually
+          accumulatedGrowth -= 0.1; // Reduce accumulated growth as it shrinks
+          image.style.transform = `scale(${Math.max(size, 1)})`; // Ensure size doesn't go below 1
+        } else {
+          clearInterval(shrinkingInterval); // Stop shrinking at original size
+        }
+      }, shrinkSpeed);
+    });
+
+    // Function to display points at the tap location
+    function showPoints(x, y, text) {
+      const pointsElement = document.createElement("div");
+      pointsElement.className = "points";
+
+
+
+
+// emtiazi ke ba har tap neshon mide
+      pointsElement.textContent = "+25";
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+
+
+      // Add the points element to the button
+      button.appendChild(pointsElement);
+
+      // Position the points element relative to the button
+      pointsElement.style.left = `${x}px`;
+      pointsElement.style.top = `${y}px`;
+
+      // Remove the points element after the animation
+      setTimeout(() => {
+        pointsElement.remove();
+      }, 700); // Match fade animation duration
+    }
 
     document.getElementById("volumeButton").addEventListener("click", () => {
   const volumeIcon = document.getElementById("volumeIcon");
