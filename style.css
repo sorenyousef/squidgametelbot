@@ -19,6 +19,7 @@ body {
       font-style: normal;
       user-select: none;
       /* width: 120%; */
+      outline: none;
 }
 
 .logo {
@@ -72,13 +73,14 @@ border: 1px solid rgba(0, 0, 0, 0.3);
 .total {
     position: fixed;
     color: white;
-    font-size: 25px;
-    top: 26%;
+    font-size: 20px;
+    top: 22%;
     left: 3%;
     padding: 5px;
-    height: 12vw;
+    height: 4.5vh;
     text-align: left;
-    width: 90%;
+    left: 5.5%;
+    width: 85vw;
     border: solid rgba(233, 62, 125, 0.77) 2px;
     border-radius: 16px;
     overflow: hidden;
@@ -226,8 +228,8 @@ border: 1px solid rgba(0, 0, 0, 0.3);
 .container3 {
     display: flex;
     position: fixed;
-    top: 37%;
-    height: 75vw;
+    top: 33%;
+    height: 41vh;
     gap: 12px;
     left: 3%;
     flex-direction: column;
@@ -290,9 +292,28 @@ border: 1px solid rgba(0, 0, 0, 0.3);
     color: white;
     font-size: 16px;
     border-radius: 20px;
-    border: 3px solid rgba(233, 62, 125, 0.77)
+    border: 3px solid rgba(233, 62, 125, 0.77);
+    box-sizing: border-box; /* Ensures borders don't affect the width */
 }
 
+.copy-button:hover {
+    
+    background: rgba(255, 50, 100, 1); /* Slightly brighter color */
+    color: #f3f3f3; /* Slightly lighter text color */
+    box-shadow: 0px 4px 10px rgba(232, 10, 82, 0.5); /* Add a shadow effect */
+    transform: scale(1.05); 
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.copy-button:active {
+    background: rgba(200, 0, 70, 1);
+    border-color: rgba(233, 62, 125, 1);
+    transform: scale(0.98); /* Scale slightly for active state */
+    box-shadow: inset 0px 4px 10px rgba(0, 0, 0, 0.2);
+    width: 95%; /* Explicitly set width to avoid any change */
+    left: 2.5%; /* Ensures consistent positioning */
+}
 .container4 {
     display: flex;
     flex-direction: row;
