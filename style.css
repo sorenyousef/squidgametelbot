@@ -212,13 +212,17 @@ border: 1px solid rgba(0, 0, 0, 0.3);
 .left-info {
     color: white;
 }
+.left-info-partners {
+    color: white;
+
+}
 
 .container2 {
     display: flex;
     position: fixed;
     top: 35%;
     height: 93vw;
-    gap: 12px;
+    gap: 20px;
     left: 3%;
     flex-direction: column;
     width: 98%;
@@ -250,6 +254,19 @@ border: 1px solid rgba(0, 0, 0, 0.3);
     display: flex;
     flex: row;
     width: 95%;
+    font-size: 12px;
+    border-radius: 21px;
+    height: 42px;
+}
+.mission-partners {
+    gap: 25vw;
+    align-items: center;
+    justify-content: center;
+    border: solid rgba(233, 62, 125, 0.77) 2px;
+    display: flex;
+    flex: row;
+    left: 50%;
+    width: 70%;
     font-size: 12px;
     border-radius: 21px;
     height: 42px;
@@ -390,6 +407,19 @@ border: 1px solid rgba(0, 0, 0, 0.3);
     z-index: 25;
     box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.5);
 }
+.popup-container2 {
+    /* display: none; */
+    flex-direction: column;
+    position: fixed;
+    bottom: 25%;
+    width: 95%;
+    height: 35%; /* نیمه پایینی صفحه */
+    /* background: transparent; */
+    border-radius: 16px;
+    z-index: 25;
+    box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.5);
+}
+
 
 #popup-container-win {    
     display: none;
