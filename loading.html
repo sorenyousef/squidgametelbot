@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading</title>
+    <link rel="preload" href="././static/fonts/GameOfSquids.woff2" as="font" type="font/woff2">
+</head>
+<body>
+    <style>
+        @font-face {
+    font-family: 'Game Of Squids';
+    src: url('./static/fonts/GameOfSquids.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+        body {
+            background: rgba(20, 4, 8, 1);
+          margin: 0;
+          height: 100vh;
+          overflow: hidden;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          background-color: #1a1a1a;
+        }
+    
+        .shapes-container {
+          display: flex;
+          gap: 25px;  /* Reduced from 60px */
+          align-items: center;
+          margin-bottom: 40px;
+        }
+    
+        .circle {
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          border: 6px solid rgba(232, 10, 82, 1);  /* Increased from 4px */
+          background-color: transparent;
+          animation: rotateY 2s linear infinite;
+        }
+    
+        .triangle-container {
+          width: 60px;
+          height: 52px;
+          position: relative;
+        }
+    
+        .triangle {
+          position: absolute;
+          top: -10%;
+          left: 50%;
+          border-radius: 15px;
+          transform: translateX(-50%);
+          width: 72px;
+          height: 72px;
+        }
+    
+        .triangle path {
+          stroke: rgba(232, 10, 82, 1);
+          stroke-width: 6;  /* Increased from 4 */
+          fill: none;
+          stroke-dasharray: 180;
+          stroke-dashoffset: 180;
+          animation: drawTriangle 3s infinite;
+        }
+    
+        .square {
+          width: 60px;
+          height: 60px;
+          border: 6px solid rgba(232, 10, 82, 1);  /* Increased from 4px */
+          background-color: transparent;
+          animation: rotateY 2.3s linear infinite;
+        }
+    
+        .title {
+          color: rgba(232, 10, 82, 1);
+          font-family: 'Game Of Squids';
+          font-size: 25px;
+          margin-top: -15px;
+          letter-spacing: 2px;
+        }
+    
+        @keyframes rotateY {
+          from { transform: rotateY(0deg); }
+          to { transform: rotateY(360deg); }
+        }
+    
+        @keyframes drawTriangle {
+          0% { stroke-dashoffset: 180; }
+          40% { stroke-dashoffset: 0; }
+          80% { stroke-dashoffset: 0; }
+          100% { stroke-dashoffset: -180; }
+        }
+      </style>
+    <div class="shapes-container">
+        <div class="circle"></div>
+        
+        <div class="triangle-container">
+          <svg class="triangle" viewBox="0 4.5 60 52">
+            <path d="M30 0 L60 52 L0 52 Z" />
+          </svg>
+        </div>
+        
+        <div class="square"></div>
+      </div>
+      <div class="title">SQUID GAME</div>
+</body>
+</html>
