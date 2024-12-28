@@ -16,7 +16,7 @@
 }
 
 body {
-    font-family: 'Game of Squids';
+    font-family: roboto;
      font-weight: normal;
       font-style: normal;
       user-select: none;
@@ -57,6 +57,7 @@ border: 1px solid rgba(0, 0, 0, 0.3);
  
 }
 .pointshow {
+    font-family: 'Game Of Squids';
     position: fixed;
     color: white;
     font-size: 20px;
@@ -126,6 +127,22 @@ padding-left: 2%;
     border-radius: 16px;
     overflow: hidden;
 }
+.button-check {
+    font-family: 'Game of Squids';
+    border: none;
+
+    text-align: center;
+    position: center;
+    border-radius: 16px;
+    width: 100%;
+    left: 15%;
+    height: 6.5vh;
+    color: white;
+    align-items: center;
+    line-height: 10vw;
+    font-size: 25px;
+    background-image: linear-gradient(180deg, #BC0229 -10.71%, #63182F 84.58%);
+}
 
 
 .button {
@@ -138,7 +155,7 @@ padding-left: 2%;
     width: 70%;
     bottom: 9%;
     left: 15%;
-    height: 10vw;
+    height: 6.5vh;
     color: white;
     align-items: center;
     line-height: 10vw;
@@ -248,6 +265,7 @@ padding-left: 2%;
 
 .left-info {
     color: white;
+    font-size: 16px;
     flex: 1;
 }
 
@@ -357,23 +375,28 @@ padding-left: 2%;
     display: flex;
     border-radius: 16px;
     height: 45px;
+    font-size: 20px;
     margin-left: 2.5%;
-    line-height: 18px;
+    line-height: 10px;
     justify-content: center;
     text-align: center;
     flex-direction: row;
     color: white;
-    gap: 14vw;
+    gap: 25vw;
     width: 90%;
     white-space: nowrap;
 }
 .copy-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: roboto;
     background: rgba(232, 10, 82, 1);
     width: 85%;
     left: 7%;
     position: fixed;
     bottom: 15%;
-    font-family: 'Game of Squids';
     height: 5.5vh;
     color: white;
     font-size: 16px;
@@ -406,8 +429,8 @@ padding-left: 2%;
     flex-direction: row;
     position: fixed;
     top: 12%;
-    gap: 1.3vw;
-    left: 10%;
+    gap: 0.1vw;
+    left: 12%;
     
 
 }
@@ -430,11 +453,11 @@ padding-left: 2%;
 
 .buy-button {
     color: white;
-    font-family: 'Game of Squids';
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         border: solid rgba(233, 62, 125, 0.77) 2px;
     background-color: rgba(182, 2, 73, 1);
-    width: 90%;
-    left: 5%;
+    width: 80%;
+    left: 10%;
     bottom: 15%;
     position: fixed;
     height: 55px;
@@ -595,15 +618,36 @@ body.popup-active {
     }
   }
   
+.question-info{
+
+    height: 30vh;
+    overflow-y: scroll;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    bottom: 2%;
+}
+.question-core {
+    font-size: 35px;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
 
   .question-box {
     border: solid rgba(233, 62, 125, 0.77) 2px;
     border-radius: 16px;
-    height: 100vw;
+    height: 50vh;
+
     width: 95%;
     position: fixed;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    gap: 5px;
     bottom: 2%;
   }
 
@@ -640,7 +684,8 @@ body.popup-active {
   }
 
   .wrapper-box {
-
+position: fixed;
+bottom: 3%;
     height: 40vw;
     display: flex;
     flex-direction: column;
@@ -657,9 +702,9 @@ body.popup-active {
   .container-steps {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
     position: fixed;
-    top: 37%;
+    top: 32%;
     left: 12%;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
@@ -670,10 +715,10 @@ body.popup-active {
 .step-button {
     opacity: 74%;
     font-size: 20px;
-    line-height: 4.5vh;
+    line-height: 4vh;
     top: 5%;
     padding: 5px;
-    height: 4.5vh;
+    height: 4vh;
     text-align: center;
     width: 75vw;
     border: solid rgba(233, 62, 125, 0.77) 3px;

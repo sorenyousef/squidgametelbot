@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preload" href="./static/icons/tonlogo.svg" as="image">
+    <link rel="preload" href="./static/icons/lamp.png" as="image">
+    <link rel="preload" href="./static/icons/Ticket-white.svg" as="image">
     <link rel="stylesheet" href="./style.css">
 </head>
 <body style="background: rgba(20, 4, 8, 1); overflow: hidden;">
     <a href="./main2.html" style="color: white; text-decoration: none; font-size: 20px; position: fixed; right: 5%; user-select: none; outline: none;  -webkit-tap-highlight-color: transparent">
         X
     </a>
-    <p style="position: fixed; color: white; top: 2%; font-size: 25px; left: 17%;">SQUID BANK DRAW</p>
+    <p class="button" style="top: 3%; justify-content: center; line-height: 50px; height: 50px; z-index: 2;">SQUID BANK DRAW</p>
 
     <div class="container4">
 
@@ -22,27 +25,27 @@
 
     <div></div>
 
-    <img src="./static/icons/SquidGametext.png" alt="" class="logo2" style="top: 55%;right: -17%; transform: scale(0.75) rotate(-90deg);">
+    <img src="./static/icons/lamp.png" alt="" style="position: fixed; z-index: 1; top: 12%; left: 5%; z-index: 1;">
 
-    <div style="user-select: none; display: flex; position: fixed; top: 23%; left: 11%; font-size: 20px;">
+    <div style="user-select: none; display: flex; position: fixed; top: 23%; left: 20%; font-size: 20px;">
     <img src="./static/icons/Ticket-white.svg" alt="">
     <p style="color: white;">squid bank lottery</p></div>
     
-    <div style="display: flex; position: fixed; top: 25%; left: 36%; user-select: none; font-size: 35px; align-items: center; justify-content: center;">
+    <div style="display: flex; position: fixed; top: 25%; left: 34%; user-select: none; font-size: 35px; align-items: center; justify-content: center;">
         <p style="color: white; padding-top: 10px;">12000</p>
-        <img src="./tonlogo.svg" alt="">
+        <img src="./static/icons/tonlogo.svg" alt="">
         </div>
-    <p style="color: white; position: fixed; top: 38%; left: 6%; font-size: 15px; text-align: center; width: 90%;">Participate in the big January draw and be one of the lucky 1000</p>
+    <p style="color: white; position: fixed; top: 36%; left: 6%; font-size: 20px; text-align: center; width: 90%;">Participate in the big January draw and be one of the lucky 1000</p>
 
 
 
-    <div class="tickets">
+    <div class="tickets" style="font-size: 17px;">
         
-        number of ticket
-        <Span style="font-size: 20px;">1</Span>
+        Number of Ticket
+        <Span >1</Span>
     </div>
 
-    <button class="buy-button" id="open-popup">buy ticket</button>
+    <button class="buy-button" id="open-popup">Buy Ticket</button>
 
     <footer class="footer">
 
@@ -75,15 +78,17 @@
 <div id="popup-container">
 
     <div style="border: 1px solid rgba(232, 67, 129, 1); z-index: 10;
-    border-radius: 16px 10px 0 0; height: 100%; background: rgba(20, 4, 8, 1);
+    border-radius: 16px 10px 0 0; height: 100%; background: rgba(20, 4, 8, 1); font-family: roboto;
     ">
 
         
             <button id="close-popup" style="background: none; border: none; color: white; font-size: 25px; padding: 14px; margin-left: 87%;">X</button>
         
         
-        <button class="copy-button" style="width: 90%; left: 5%;">connect wallet</button>
-        <button class="copy-button" style="bottom: 5%; width: 90%; left: 5%;">pay 0.5</button>
+        <button class="copy-button" style="width: 90%; left: 5%;">Connect Wallet</button>
+        <button class="copy-button" style="bottom: 5%; width: 90%; left: 5%;">Pay 0.5
+            <img src="./static/icons/tonlogo.svg" alt="">
+        </button>
        
     </div>
 

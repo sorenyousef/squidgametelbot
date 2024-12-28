@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="preload" href="./static/icons/gif.gif" as="image">
 
 </head>
 <body style="background: rgba(20, 4, 8, 1); overflow: hidden;">
@@ -17,19 +18,23 @@
     <div class="coin">
 
     <!-- <img src="./static/icons/umbrella.svg" alt="" > -->
-     <img src="./static/icons/gif.gif" alt="">
+     <img src="./static/icons/gif.gif" alt=""> 
 </div>
-    <p style="color: white; top: 35%; position: fixed; font-size: 25px; left: 30%;">SQUID QUIZ</p>
+    <p style="color: white; top: 35%; position: fixed; font-size: 25px; left: 34%;">SQUID QUIZ</p>
 
     <div class="question-box">
-        <p style="color: white; padding-left: 10px;">ANSWER THE QUESTION:</p>
-        <p style="color: white;  margin-top: 15%; white-space: nowrap; font-size: 28px; text-align: center;">QUESTION</p>
+        <div class="question-info">
+        <p style="color: white; text-align: center; ">ANSWER THE QUESTION: <br> <span class="question-core">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste ipsam ratione, dicta obcaecati molestiae ullam autem voluptas voluptatem libero, nobis alias esse quaerat ipsum laudantium!
+        </span>
+       </p>
+        <img src="./static/icons/triangle.svg" alt="" style="transform: rotate(180deg);"></div>
 
         <div class="wrapper-box">
 
  
                 <input type="text" id="name" name="name" placeholder="WRITE THE ANSWER" />
-                <button  id="open-popup" class="button">CHECK</button>
+                <button  id="open-popup" class="button-check">CHECK</button>
 
         </div>
 
