@@ -59,14 +59,14 @@ border: 1px solid rgba(0, 0, 0, 0.3);
 .pointshow {
     position: fixed;
     color: white;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 4.5vh;
     top: 5%;
     padding: 5px;
     height: 4.5vh;
     text-align: center;
-    width: 80vw;
-    left: 8.2%;
+    width: 60vw;
+    left: 17.5vw;
     border: solid rgba(233, 62, 125, 0.77) 2px;
     border-radius: 16px;
     overflow: hidden;
