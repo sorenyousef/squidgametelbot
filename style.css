@@ -71,6 +71,39 @@ border: 1px solid rgba(0, 0, 0, 0.3);
     border-radius: 16px;
     overflow: hidden;
 }
+.timer-text {
+color: rgba(165, 222, 255, 1);
+font-weight: 400;
+font-size: 12px;     
+}
+.step-text {
+display: flex;
+justify-content: space-between;
+flex-direction: row;
+width: 95%;
+padding-left: 2%;
+}
+
+.tickets {
+    position: fixed;
+    display: flex;
+    justify-content:space-between;
+    flex-direction: row;
+    gap: 5vw;
+     height: 20px; 
+    padding: 10px;
+       align-items: center; 
+
+       font-size: 12px; 
+       color: white;
+       left: 13.5%; 
+       width: 70%; 
+       border: 3px solid rgba(233, 62, 125, 0.77);
+        white-space: nowrap; 
+        top: 48%;
+         border-radius: 16px;
+
+}
 
 .total {
     position: fixed;
@@ -373,7 +406,8 @@ border: 1px solid rgba(0, 0, 0, 0.3);
     flex-direction: row;
     position: fixed;
     top: 12%;
-    gap: 20px;
+    gap: 1.3vw;
+    left: 10%;
     
 
 }
@@ -382,8 +416,8 @@ border: 1px solid rgba(0, 0, 0, 0.3);
     font-family: 'roboto';
     font-weight: 900;
     font-size: 25px;
-    border: solid rgba(233, 62, 125, 0.77) 2px;
-    background-color: rgba(182, 2, 73, 1);
+    /* border: solid rgba(233, 62, 125, 0.77) 2px; */
+    /* background-color: rgba(182, 2, 73, 1); */
     width: 75px;
     height: 75px;
     color: white;
@@ -620,3 +654,28 @@ body.popup-active {
   }
 
 
+  .container-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: fixed;
+    top: 37%;
+    left: 12%;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+  }
+
+.step-button {
+    opacity: 74%;
+    font-size: 20px;
+    line-height: 4.5vh;
+    top: 5%;
+    padding: 5px;
+    height: 4.5vh;
+    text-align: center;
+    width: 75vw;
+    border: solid rgba(233, 62, 125, 0.77) 3px;
+    border-radius: 16px;
+}

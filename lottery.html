@@ -14,29 +14,21 @@
 
     <div class="container4">
 
-        <div class="timer"><p>59 <br> <span style="color: rgba(165, 222, 255, 1); font-weight: 400;
-    font-size: 12px;
-">DAYS</span></p></div>
-        <div class="timer"><p>43 <br> <span style="color: rgba(165, 222, 255, 1); font-weight: 400;
-            font-size: 12px;
-        ">HOURS</span></p></div>
-        <div class="timer"><p>33 <br> <span style="color: rgba(165, 222, 255, 1); font-weight: 400;
-            font-size: 12px;
-        ">MINUTES</span></p></div>
-        <div class="timer"><p>19 <br> <span style="color: rgba(165, 222, 255, 1); font-weight: 400;
-            font-size: 12px;
-        ">SECONDS</span></p></div>
+        <div class="timer"><p>59 <br> <span class="timer-text">DAYS</span></p></div>
+        <div class="timer"><p>43 <br> <span class="timer-text">HOURS</span></p></div>
+        <div class="timer"><p>33 <br> <span class="timer-text">MINUTES</span></p></div>
+        <div class="timer"><p>19 <br> <span class="timer-text">SECONDS</span></p></div>
     </div>
 
     <div></div>
 
     <img src="./static/icons/SquidGametext.png" alt="" class="logo2" style="top: 55%;right: -17%; transform: scale(0.75) rotate(-90deg);">
 
-    <div style="user-select: none; display: flex; position: fixed; top: 23%; left: 13%; font-size: 20px;">
-    <img src="./Ticket.svg" alt="">
+    <div style="user-select: none; display: flex; position: fixed; top: 23%; left: 11%; font-size: 20px;">
+    <img src="./static/icons/Ticket-white.svg" alt="">
     <p style="color: white;">squid bank lottery</p></div>
     
-    <div style="display: flex; position: fixed; top: 25%; left: 30%; user-select: none; font-size: 35px; align-items: center; justify-content: center;">
+    <div style="display: flex; position: fixed; top: 25%; left: 36%; user-select: none; font-size: 35px; align-items: center; justify-content: center;">
         <p style="color: white; padding-top: 10px;">12000</p>
         <img src="./tonlogo.svg" alt="">
         </div>
@@ -44,9 +36,10 @@
 
 
 
-    <div style="display: flex; flex-direction: row;height: 35px; justify-content: center;align-items: center; font-size: 12px; color: white; gap: 48vw;left: 3.5%; width: 90%; border: 3px solid rgba(233, 62, 125, 0.77); white-space: nowrap; top: 48%; border-radius: 16px; position: fixed;">
-        <p>number of ticket</p>
-        <p>0</p>
+    <div class="tickets">
+        
+        number of ticket
+        <Span style="font-size: 20px;">1</Span>
     </div>
 
     <button class="buy-button" id="open-popup">buy ticket</button>
