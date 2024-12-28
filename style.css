@@ -185,40 +185,37 @@ border: 1px solid rgba(0, 0, 0, 0.3);
     user-select: none;
 }
 .right-do {
-    font-family: 'Game of Squids';
+    font-family: 'Game Of Squids';
     border-radius: 50%;
     border: solid white 2px;
-    width: fit-content;
     color: white;
     width: 35px;
     height: 35px;
     text-align: center;
-    justify-content: center;
-    background:none;
+    background: none;
     font-size: 18px;
     padding-left: 2.2px;
-
+    flex-shrink: 0;
 }
 .right-do-img {
-
     border-radius: 50%;
     border: solid white 2px;
-    width: fit-content;
     color: white;
     background: none;
     width: 35px;
     height: 35px;
     text-align: center;
-    justify-content: center;
-    background:none;
     font-size: 18px;
     padding-left: 4px;
     padding-top: 4px;
-
+    flex-shrink: 0;
 }
+
 .left-info {
     color: white;
+    flex: 1;
 }
+
 .left-info-partners {
     color: white;
 
@@ -230,14 +227,32 @@ border: 1px solid rgba(0, 0, 0, 0.3);
     top: 35%;
     height: 93vw;
     gap: 20px;
-    left: 3%;
+    left: 50%; /* Center the container */
+    transform: translateX(-50%); /* Center the container */
     flex-direction: column;
-    width: 98%;
-    overflow-y:scroll;
+    width: 90%; /* Slightly reduced width to prevent overflow */
+    overflow-y: scroll;
     scrollbar-width: none;
     -ms-overflow-style: none;
     overflow-x: hidden;
 }
+
+.container9 {
+    display: flex;
+    position: fixed;
+    top: 35%;
+    height: 93vw;
+    gap: 20px;
+    left: 50%; /* Center the container */
+    transform: translateX(-50%); /* Center the container */
+    flex-direction: column;
+    width: 90%; /* Slightly reduced width to prevent overflow */
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    overflow-x: hidden;
+}
+
 .container3 {
     display: flex;
     position: fixed;
@@ -252,18 +267,29 @@ border: 1px solid rgba(0, 0, 0, 0.3);
     -ms-overflow-style: none;
     overflow-x: hidden;
 }
+#container-ingame .mission .left-info {
+    color: white;
+    flex: 1;
+    text-align: left;
+    padding-right: 10px;
+}
 
+#container-partners .mission .left-info {
+    color: white;
+    flex: 1;
+    text-align: center; /* Center text for partners */
+    padding: 0; /* Remove padding for centered content */
+}
 .mission {
-    gap: 25vw;
-    align-items: center;
-    justify-content: center;
-    border: solid rgba(233, 62, 125, 0.77) 2px;
     display: flex;
-    flex: row;
-    width: 95%;
+    justify-content: space-between;
+    align-items: center;
+    border: solid rgba(233, 62, 125, 0.77) 2px;
+    width: 90%; /* Changed from 95% to use full container width */
     font-size: 12px;
     border-radius: 21px;
     height: 42px;
+    padding: 0 15px;
 }
 .mission-partners {
     gap: 25vw;
@@ -280,17 +306,15 @@ border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 .mission2 {
-    gap: 25vw;
-    align-items: center;
-    justify-content: center;
-    border: solid rgba(233, 62, 125, 0.77) 2px;
     display: flex;
-    flex: row;
-    width: 95%;
+    justify-content: space-between;
+    align-items: center;
+    border: solid rgba(233, 62, 125, 0.77) 2px;
+    width: 90%;
     font-size: 12px;
     border-radius: 21px;
     height: 42px;
-
+    padding: 0 15px;
 }
 
 .fren {
@@ -305,7 +329,7 @@ border: 1px solid rgba(0, 0, 0, 0.3);
     flex-direction: row;
     color: white;
     gap: 14vw;
-    width: 90.8%;
+    width: 90%;
     white-space: nowrap;
 }
 .copy-button {
