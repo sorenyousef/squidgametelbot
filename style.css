@@ -724,3 +724,10 @@ bottom: 3%;
     border: solid rgba(233, 62, 125, 0.77) 3px;
     border-radius: 16px;
 }
+
+.step-button2 {
+    background: none;
+    color: white;
+    border: none;
+    padding: 0;
+}
