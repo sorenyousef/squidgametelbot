@@ -1,0 +1,120 @@
+<style>
+    .popup {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #222;
+        color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        display: none;
+        width: 95%;
+        height: 35%;
+        flex-direction: column;
+        align-items: center;
+        z-index: 1000;
+        border: solid rgba(233, 62, 125, 0.77) 2px;
+    }
+
+    .popup .popup-message {
+        font-size: 16px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .popup .popup-buttons {
+        display: flex;
+        gap: 10px;
+    }
+
+    .popup .popup-buttons button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+        color: white;
+        background-color: rgba(232, 10, 82, 1);
+        transition: background-color 0.3s ease;
+    }
+
+    .popup .popup-buttons button:hover {
+        background-color: rgba(200, 8, 72, 1);
+    }
+
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: none;
+        z-index: 999;
+    }
+</style>
+
+<div class="overlay"></div>
+<div class="popup" id="popup">
+    <div class="popup-message">You must join the channel to play the game!</div>
+    <div class="popup-buttons">
+        <button id="join-button">Join</button>
+        <button id="check-button">Check</button>
+    </div>
+</div>
+
+
+<script>
+    function showPopup(message) {
+        const overlay = document.querySelector('.overlay');
+        const popup = document.getElementById('popup');
+        const messageBox = popup.querySelector('.popup-message');
+
+        messageBox.textContent = message;
+        overlay.style.display = 'block';
+        popup.style.display = 'flex';
+    }
+
+    function hidePopup() {
+        const overlay = document.querySelector('.overlay');
+        const popup = document.getElementById('popup');
+
+        overlay.style.display = 'none';
+        popup.style.display = 'none';
+    }
+
+    document.getElementById('join-button').addEventListener('click', () => {
+        window.open('https://t.me/join_channel_link', '_blank');
+        hidePopup();
+    });
+
+    document.getElementById('check-button').addEventListener('click', () => {
+        sendInitData(); // تابع موجود برای بررسی دوباره
+        hidePopup();
+    });
+
+    // جایگزینی showAlert با showPopup
+    async function sendInitData() {
+        if (!tg.initData) {
+            console.error('No initData available!');
+            document.body.innerHTML = 'Error: No Telegram data available';
+            return;
+        }
+
+        try {
+            const response = await fetch('/check-member?initData=' + encodeURIComponent(tg.initData));
+            if (response.status === 200) {
+                window.location.href = '/start?initData=' + encodeURIComponent(tg.initData);
+            } else if (response.status === 400) {
+                showPopup("You must join the channel to play the game!");
+            } else {
+                showPopup("An error occurred. Please try again later.");
+            }
+
+        } catch (error) {
+            alert('Error: ' + error.message.toString());
+        }
+    }
+</script>
