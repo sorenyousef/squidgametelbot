@@ -1,0 +1,86 @@
+<!-- Alert باکس موجود با تغییرات درخواستی -->
+<div class="custom-alert" id="customAlert">
+    <span id="customAlertMessage"></span>
+    <button onclick="closeAlert()">OK</button>
+</div>
+
+<!-- Confirm باکس جدید -->
+<div class="custom-confirm" id="customConfirm">
+    <span id="customConfirmMessage"></span>
+    <div class="confirm-buttons">
+        <button onclick="closeConfirm(false)">Cancel</button>
+        <button onclick="closeConfirm(true)">Yes</button>
+    </div>
+</div>
+
+<style>
+    .custom-alert, .custom-confirm {
+        font-family: 'Game of Squids';
+        background-color: #1a0408; /* زرشکی خیلی تیره */
+        border: 2px solid #e93e7d; /* حاشیه قرمز */
+        border-radius: 10px;
+        color: #fff;
+        font-size: 16px;
+        padding: 20px;
+        width: 300px;
+        text-align: center;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1000;
+        display: none;
+    }
+
+    .custom-alert button,
+    .custom-confirm button {
+        font-family: roboto;
+        background-color: rgba(33, 45, 59, 1);
+        border: 2px solid #e93e7d;
+        border-radius: 10px;
+        margin-top: 15px;
+        padding: 10px 20px;
+        color: white;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+    .custom-confirm .confirm-buttons {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+    }
+
+    .custom-alert button:hover,
+    .custom-confirm button:hover {
+        background-color: #777;
+    }
+</style>
+
+<script>
+    function showAlert(message) {
+        const alertBox = document.getElementById('customAlert');
+        const alertMessage = document.getElementById('customAlertMessage');
+        alertMessage.textContent = message;
+        alertBox.style.display = 'block';
+    }
+
+    function closeAlert() {
+        const alertBox = document.getElementById('customAlert');
+        alertBox.style.display = 'none';
+    }
+
+    function showConfirm(message) {
+        return new Promise((resolve) => {
+            const confirmBox = document.getElementById('customConfirm');
+            const confirmMessage = document.getElementById('customConfirmMessage');
+            confirmMessage.textContent = message;
+            confirmBox.style.display = 'block';
+
+            window.closeConfirm = (result) => {
+                confirmBox.style.display = 'none';
+                resolve(result);
+            };
+        });
+    }
+</script>
