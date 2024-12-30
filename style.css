@@ -16,6 +16,7 @@
 }
 
 body {
+    -webkit-tap-highlight-color: transparent;
     font-family: roboto;
      font-weight: normal;
       font-style: normal;
